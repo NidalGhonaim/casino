@@ -6,6 +6,7 @@ import Header from "@/components/header";
 import Footer from "@/components/footer";
 import Menu from "@/components/menu";
 import MobileMenu from "@/components/mobile-menu";
+import { Analytics } from "@vercel/analytics/next";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -31,6 +32,7 @@ export default function RootLayout({
         <Footer />
         <Menu />
         <MobileMenu />
+        <Analytics />
       </body>
     </html>
   );
