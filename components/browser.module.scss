@@ -1,3 +1,5 @@
+@use "../styles/screen";
+
 .container {
   display: flex;
   flex-direction: column;
@@ -31,10 +33,65 @@
     display: flex;
     gap: var(--space-200);
     align-items: center;
+    @include screen.is-small {
+      flex-direction: column;
+    }
     .tags {
       display: flex;
       gap: var(--space-100);
       overflow-x: auto;
+    }
+    .select {
+      position: relative;
+      display: flex;
+      flex: 1;
+      @include screen.is-small {
+        width: 100%;
+      }
+      .input {
+        flex: 1;
+        border: none;
+        border-radius: 0 var(--radius-100) var(--radius-100) 0;
+        background-color: var(--color-blue-dark);
+        font-size: var(--font-size-100);
+        line-height: 1;
+        padding: var(--space-300);
+        padding-left: 40px;
+        max-width: 200px;
+        appearance: none; /* Modern browsers */
+        -webkit-appearance: none; /* Safari/Chrome */
+        -moz-appearance: none; /* Firefox */
+        @include screen.is-small {
+          max-width: initial;
+        }
+      }
+      .icon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+      }
+      .arrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: rotate(90deg);
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        pointer-events: none;
+        background-color: var(--color-blue-mid);
+        width: 24px;
+        height: 24px;
+        border: 1px solid var(--color-blue-soft);
+        border-radius: var(--radius-100);
+        box-shadow: 0 0 2px 4px var(--color-blue-dark);
+        svg {
+          width: 24px;
+          height: 24px;
+          transform: scale(1.25);
+        }
+      }
     }
   }
   .category {

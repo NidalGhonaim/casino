@@ -2,6 +2,7 @@
 
 import styles from "./browser.module.scss";
 import Button from "./button";
+import IconArrowRight from "./icons/icon-arrow-right";
 import IconBaccarat from "./icons/icon-baccarat";
 import IconBadge from "./icons/icon-badge";
 import IconBlackjack from "./icons/icon-blackjack";
@@ -262,8 +263,36 @@ const Browser = () => {
             Dice
           </Button>
         </div>
-        {/* <p>select 1</p>
-        <p>select 2</p> */}
+        {/* TODO: move select to its own component */}
+        <div className={styles.select}>
+          <span className={styles.icon}>
+            <IconDice />
+          </span>
+          <select className={styles.input} name="collections" id="collections">
+            <option value="">Collections</option>
+            <option value="one">one</option>
+            <option value="one">one</option>
+            <option value="two">two</option>
+            <option value="three">three</option>
+          </select>
+          <span className={styles.arrow}>
+            <IconArrowRight />
+          </span>
+        </div>
+        <div className={styles.select}>
+          <span className={styles.icon}>
+            <IconDice />
+          </span>
+          <select className={styles.input} name="providers" id="providers">
+            <option value="">Providers</option>
+            <option value="one">one</option>
+            <option value="two">two</option>
+            <option value="three">three</option>
+          </select>
+          <span className={styles.arrow}>
+            <IconArrowRight />
+          </span>
+        </div>
       </div>
       {[
         ...new Map(
