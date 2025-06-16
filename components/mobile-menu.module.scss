@@ -1,0 +1,40 @@
+@use "../styles/screen";
+
+.container {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--color-blue-dark);
+  padding: var(--space-300) var(--space-200) var(--space-200);
+  display: flex;
+  justify-content: space-around;
+  gap: var(--space-200);
+  border-top: 1px solid var(--color-blue-light);
+  border-radius: var(--radius-100) var(--radius-100) 0 0;
+  .link {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-100);
+    font-size: var(--font-size-50);
+    &:nth-child(3) {
+      background-color: var(--color-brand);
+      width: 48px;
+      height: 48px;
+      border-radius: 48px;
+      transform: scale(1.2);
+      color: white;
+      .label {
+        display: none;
+      }
+    }
+    .label {
+      color: white;
+    }
+  }
+  @include screen.is-not-small {
+    display: none;
+  }
+}

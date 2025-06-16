@@ -5,6 +5,7 @@ import styles from "./layout.module.scss";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import Menu from "@/components/menu";
+import MobileMenu from "@/components/mobile-menu";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -29,6 +30,7 @@ export default function RootLayout({
         <main className={styles.main}>{children}</main>
         <Footer />
         <Menu />
+        <MobileMenu />
       </body>
     </html>
   );
