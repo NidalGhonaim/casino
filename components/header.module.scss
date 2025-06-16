@@ -1,6 +1,9 @@
 @use "../styles/screen";
 
 .container {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   background-color: var(--color-blue-deep);
   padding: var(--space-300) var(--space-400);
   @include screen.is-small {
