@@ -1,5 +1,6 @@
 import styles from "./deposit-button.module.scss";
 import IconDollar from "./icons/icon-dollar";
+import IconMoney from "./icons/icon-money";
 
 const DepositButton = () => {
   return (
@@ -12,7 +13,7 @@ const DepositButton = () => {
       </div>
       <button className={styles.button}>
         <span className={styles.icon}>
-          <IconDollar />
+          <IconMoney />
         </span>
         <span className={styles.label}>DEPOSIT</span>
       </button>
