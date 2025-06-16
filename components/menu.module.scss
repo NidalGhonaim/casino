@@ -9,6 +9,7 @@
   padding: var(--space-100);
   border-right: 1px solid var(--color-blue-soft);
   overflow-y: auto;
+  z-index: 10000;
   @include screen.is-small {
     display: none;
   }
