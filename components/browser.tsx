@@ -13,6 +13,7 @@ import IconFlash from "./icons/icon-flash";
 import IconGrid from "./icons/icon-grid";
 import IconLiveDealers from "./icons/icon-live-dealers";
 import IconRoulette from "./icons/icon-roulette";
+import IconSearch from "./icons/icon-search";
 import IconSlots from "./icons/icon-slots";
 import Shelf from "./shelf";
 
@@ -224,7 +225,7 @@ const Browser = () => {
     <div className={styles.container}>
       <div className={styles.search}>
         <label className={styles.label} htmlFor="search" title="search">
-          <IconGrid />
+          <IconSearch />
         </label>
         <input
           className={styles.input}
