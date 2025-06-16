@@ -1,0 +1,89 @@
+@use "../styles/screen";
+
+.container {
+  background-color: var(--color-blue-dark);
+  padding: var(--space-600) var(--space-300);
+  .main {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-600);
+    max-width: var(--max-width);
+    margin: 0 auto;
+    .nav {
+      display: flex;
+      gap: var(--space-500);
+      flex-wrap: wrap;
+      .brand,
+      .column {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-200);
+        font-size: var(--font-size-50);
+        min-width: 150px;
+        .title {
+          font-size: var(--font-size-200);
+          font-weight: var(--font-medium);
+          color: white;
+        }
+        .link {
+          font-size: var(--font-size-50);
+          transition: all 100ms ease-in-out;
+          &:hover {
+            color: white;
+          }
+        }
+      }
+      .brand {
+        flex: 2;
+        @include screen.is-small {
+          flex: 0 0 100%;
+          width: 100%;
+        }
+      }
+    }
+    .payments {
+      display: flex;
+      gap: var(--space-200);
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: var(--space-500) var(--space-200);
+      border-top: 1px solid var(--color-blue-soft);
+      border-bottom: 1px solid var(--color-blue-soft);
+      .logo {
+        height: 45px;
+        width: auto;
+      }
+    }
+    .legal {
+      position: relative;
+      display: grid;
+      justify-items: center;
+      gap: var(--space-300);
+      font-size: var(--font-size-50);
+      text-align: center;
+      color: #66788c;
+      .logos {
+        display: flex;
+        gap: var(--space-300);
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 0 var(--space-200) var(--space-500);
+        border-bottom: 1px solid var(--color-blue-soft);
+        width: 100%;
+        @include screen.is-not-small {
+          position: absolute;
+          top: -12px;
+          right: 0;
+          width: fit-content;
+          padding: 0;
+          border: none;
+        }
+        .logo {
+          height: 35px;
+          width: auto;
+        }
+      }
+    }
+  }
+}

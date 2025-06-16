@@ -1,0 +1,24 @@
+@mixin is-small() {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+@mixin is-not-small() {
+  @media screen and (min-width: 769px) {
+    @content;
+  }
+}
+
+@mixin smaller-than($width) {
+  $newWidth: calc($width - 1px);
+  @media screen and (max-width: $newWidth) {
+    @content;
+  }
+}
+
+@mixin bigger-than($width) {
+  $newWidth: calc($width + 1px);
+  @media screen and (min-width: $newWidth) {
+    @content;
+  }
+}

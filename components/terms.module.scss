@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-200);
+  background-color: var(--color-blue-dark);
+  padding: var(--space-500);
+  .title {
+    font-size: var(--font-size-200);
+    font-weight: var(--font-medium);
+    color: white;
+  }
+  .terms {
+    font-size: var(--font-size-50);
+  }
+}

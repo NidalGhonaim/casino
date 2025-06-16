@@ -1,0 +1,143 @@
+@use "../styles/screen";
+
+.button {
+  width: fit-content;
+  min-width: fit-content;
+  background-color: var(--color-brand);
+  color: var(--color-offwhite);
+  font-size: var(--font-size-100);
+  font-family: var(--font-poppins);
+  font-weight: var(--font-medium);
+  text-transform: capitalize;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  padding: var(--space-200) var(--space-300);
+  border: 1px solid var(--color-brand);
+  border-radius: var(--radius-100);
+  box-shadow: 0 0 0 0px var(--color-brand);
+  transition: all 100ms ease-out;
+  user-select: none;
+  cursor: pointer;
+  @include screen.is-not-small {
+    padding: var(--space-200) var(--space-300);
+  }
+  svg {
+    transition: all 100ms ease-out;
+    width: 1em;
+    height: 1em;
+    transform: scale(2);
+  }
+  &:hover {
+    background-color: var(--color-brand-darker);
+    border-color: var(--color-brand-darker);
+    box-shadow: 0 0 0 1px var(--color-brand);
+  }
+  &:active {
+    transform: translateY(1px);
+  }
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  &:disabled:active {
+    transform: translateY(0);
+  }
+}
+
+.secondary {
+  background-color: var(--color-blue-soft);
+  border: 1px solid var(--color-blue-light);
+  &:hover {
+    background-color: var(--color-blue-mid);
+  }
+}
+
+.active {
+  background-color: var(--color-blue-dark);
+}
+
+.stretch {
+  width: 100%;
+}
+
+@mixin iconOnly() {
+  background-color: var(--color-blue-soft);
+  width: 40px;
+  min-width: 40px;
+  height: 40px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--color-blue-light);
+  padding: 0;
+  cursor: pointer;
+  svg {
+    fill: none;
+    width: 1.25em;
+    height: 1.25em;
+    margin: 0;
+  }
+  &:hover {
+    background-color: var(--color-blue-dark);
+  }
+}
+
+// icon only button
+.iconOnly {
+  @include iconOnly();
+  .content {
+    display: grid;
+    gap: 0;
+    justify-items: center;
+  }
+  .label {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+}
+
+.iconOnlyOnMobile {
+  @include screen.is-small {
+    @include iconOnly();
+    .content {
+      display: grid;
+      gap: 0;
+      justify-items: center;
+    }
+    .label {
+      border: 0;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      white-space: nowrap;
+      width: 1px;
+    }
+  }
+}
+
+.content {
+  display: flex;
+  gap: calc(var(--space-100) + var(--space-50));
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+.label {
+  display: flex;
+  gap: var(--space-200);
+  align-items: center;
+  flex-wrap: wrap;
+  pointer-events: none;
+}

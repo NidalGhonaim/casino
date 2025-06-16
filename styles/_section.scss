@@ -1,0 +1,13 @@
+@mixin wide {
+  width: 100%;
+  display: grid;
+  gap: var(--space-400);
+  // padding: var(--space-400);
+  border-radius: var(--radius-100);
+}
+
+@mixin narrow {
+  @include wide;
+  max-width: var(--landing-page-narrow-width);
+  margin: 0 auto;
+}

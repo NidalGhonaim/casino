@@ -1,0 +1,38 @@
+@use "../styles/screen";
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-200);
+  .subgrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-200);
+  }
+  .link {
+    border-radius: var(--radius-100);
+    box-shadow: 0 0 0 0px var(--color-blue-mid), 0 0 0 0px var(--color-brand);
+    transition: all 100ms ease-out;
+    &:hover {
+      transform: scale(1.025);
+      box-shadow: 0 0 0 2px var(--color-blue-mid), 0 0 0 4px var(--color-brand);
+    }
+    .image {
+      width: 100%;
+      height: 100%;
+      aspect-ratio: 1.6;
+      object-fit: cover;
+      border-radius: var(--radius-100);
+    }
+  }
+  @include screen.is-small {
+    grid-template-columns: 1fr 1fr;
+    .subgrid {
+      grid-column: span 2;
+      grid-template-columns: repeat(4, 1fr);
+      .image {
+        aspect-ratio: 1;
+      }
+    }
+  }
+}

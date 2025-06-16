@@ -1,0 +1,18 @@
+.container {
+  display: grid;
+  gap: var(--space-200);
+  grid-template-columns: 1fr 1fr;
+  padding-bottom: var(--space-800);
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+  --swiper-pagination-bullet-inactive-color: grey;
+  --swiper-pagination-color: var(--color-brand);
+  img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 595 / 300;
+    object-fit: cover;
+    border-radius: var(--radius-100);
+  }
+}

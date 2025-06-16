@@ -1,0 +1,22 @@
+@use "../styles/screen";
+
+.container {
+  background-color: var(--color-blue-deep);
+  padding: var(--space-300) var(--space-400);
+  @include screen.is-small {
+    padding: var(--space-200);
+  }
+  .main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: var(--max-width);
+    // border: 1px solid yellowgreen;
+    margin: 0 auto;
+    .controls {
+      display: flex;
+      align-items: center;
+      gap: var(--space-200);
+    }
+  }
+}
