@@ -1,9 +1,27 @@
 .container {
-  display: flex;
-  flex-direction: column;
+  position: relative;
+  display: grid;
+  grid-template-rows: max-content max-content 0fr max-content;
   gap: var(--space-200);
   background-color: var(--color-blue-dark);
   padding: var(--space-500);
+  transition: grid-template-rows 200ms ease-in-out;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+    transition: opacity 100ms ease-in-out;
+  }
+  &.expanded {
+    grid-template-rows: max-content max-content 1fr max-content;
+    &::after {
+      opacity: 0;
+    }
+  }
   .title {
     font-size: var(--font-size-200);
     font-weight: var(--font-medium);
@@ -11,5 +29,16 @@
   }
   .terms {
     font-size: var(--font-size-50);
+  }
+  .rest {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-200);
+  }
+  .button {
+    max-width: 320px;
+    margin: 0 auto;
+    z-index: 10;
   }
 }
